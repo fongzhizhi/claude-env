@@ -9,8 +9,8 @@
     "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-flash",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "DISABLE_INSTALLATION_CHECKS": "1",
-    "MAX_THINKING_TOKENS": "10000",
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50"
+    "MAX_THINKING_TOKENS": "16000",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "70"
   },
   "cleanupPeriodDays": 60,
   "language": "zh-CN",
