@@ -16,6 +16,8 @@
   "language": "zh-CN",
   "autoUpdatesChannel": "stable",
   "theme": "dark-ansi",
+  "showTurnDuration": true,
+  "spinnerTipsEnabled": false,
   "permissions": {
     "defaultMode": "acceptEdits"
   },
