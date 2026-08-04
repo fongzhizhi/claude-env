@@ -1,9 +1,13 @@
-#!/usr/bin/env pwsh
+﻿#!/usr/bin/env pwsh
 # Claude Code 模型切换脚本
 # 用法: .\switch-profile.ps1 <profile_name>
 # 示例: .\switch-profile.ps1 deepseek
 
 $ErrorActionPreference = "Stop"
+
+# 确保向 UTF-8 终端（Git Bash / VSCode 终端）输出中文不乱码
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
 
 # 获取脚本所在目录的父目录（仓库根目录）
 $RepoRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)

@@ -22,7 +22,7 @@
 | 能力 | 说明 |
 | :--- | :--- |
 | **一键部署** | 新设备上 `git clone` + `npm run deploy` 即可恢复完整环境 |
-| **多模型切换** | 通过脚本在 DeepSeek、智谱、Agnes 等模型间快速切换 |
+| **多模型切换** | 通过脚本在 DeepSeek、智谱等模型间快速切换 |
 | **Skill 版本管理** | 所有自定义 Skill 集中管理，可追溯变更历史 |
 | **跨设备同步** | 台式机、笔记本、公司电脑保持一致的 AI 编程体验 |
 | **配置分层** | 通用配置与私有配置分离，安全且灵活 |
@@ -43,12 +43,15 @@
 
 ```
 claude-env/
+├── .config/                               # 外部工具配置目录
+│   └── vscode/                            # VSCode 配置
+│       ├── settings.json                  # VSCode 完整用户配置
+│       └── README.md                      # VSCode 配置使用说明
 ├── .claude/                               # 核心配置目录（映射到 ~/.claude）
 │   ├── settings.json                      # 主配置（不含敏感信息）
 │   ├── profiles/                          # 配置模板目录（提交 Git）
 │   │   ├── deepseek.template.json         # DeepSeek 配置模板
 │   │   ├── zhipu.template.json            # 智谱配置模板
-│   │   ├── agnes.template.json            # Agnes 配置模板
 │   │   └── company.template.json          # 公司配置模板（可选）
 │   ├── skills/                            # 技能库
 │   │   ├── core/                          # 核心技能（通用）
@@ -70,6 +73,7 @@ claude-env/
 │       └── api-endpoint.py.template
 ├── scripts/                               # 部署与工具脚本
 │   ├── deploy.ps1                         # Windows 一键部署脚本
+│   ├── deploy-vscode.ps1                  # VSCode 配置部署脚本
 │   ├── deploy.sh                          # macOS/Linux 一键部署脚本
 │   ├── switch-profile.ps1                 # 模型切换脚本（核心）
 │   ├── switch-profile.bat                 # 双击运行的批处理入口
@@ -163,30 +167,6 @@ claude-env/
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4-flash",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4-flash",
     "CLAUDE_CODE_SUBAGENT_MODEL": "glm-4-flash",
-    "CLAUDE_CODE_EFFORT_LEVEL": "max",
-    "DISABLE_INSTALLATION_CHECKS": "1",
-    "MAX_THINKING_TOKENS": "10000",
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50"
-  },
-  "permissions": {
-    "defaultMode": "acceptEdits"
-  },
-  "theme": "dark-ansi",
-  "allowedTools": ["Read", "Write", "Edit", "Bash"]
-}
-```
-
-**`profiles/agnes.template.json`**：
-```json
-{
-  "env": {
-    "ANTHROPIC_BASE_URL": "https://api.agnes-ai.cn/v1",
-    "ANTHROPIC_AUTH_TOKEN": "YOUR_AGNES_API_KEY_HERE",
-    "ANTHROPIC_MODEL": "agnes-2.0-flash",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "agnes-2.5-flash",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "agnes-2.0-flash",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "agnes-2.0-flash",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "agnes-2.0-flash",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "DISABLE_INSTALLATION_CHECKS": "1",
     "MAX_THINKING_TOKENS": "10000",
@@ -300,7 +280,7 @@ npm run deploy
 
 ### 5.3 模型切换脚本 (`switch-profile.ps1`)
 
-**功能**：快速在 DeepSeek、智谱、Agnes 等模型间切换。
+**功能**：快速在 DeepSeek、智谱等模型间切换。
 
 **核心逻辑**：
 1. 从 `profiles/` 目录读取指定的 `.template` 文件
@@ -317,9 +297,6 @@ npm run deploy
 # 切换到智谱
 .\scripts\switch-profile.ps1 zhipu
 
-# 切换到 Agnes
-.\scripts\switch-profile.ps1 agnes
-
 # 无参数运行：显示可用模板列表
 .\scripts\switch-profile.ps1
 ```
@@ -328,7 +305,6 @@ npm run deploy
 ```bash
 npm run switch:deepseek
 npm run switch:zhipu
-npm run switch:agnes
 npm run switch:company
 ```
 
@@ -342,11 +318,12 @@ npm run switch:company
   "version": "1.0.0",
   "description": "Claude Code 环境即代码 —— 技能、智能体、配置，一键跨设备同步",
   "scripts": {
-    "deploy": "powershell -ExecutionPolicy Bypass -File scripts/deploy.ps1",
+    "deploy": "npm run deploy:claude && npm run deploy:vscode",
+    "deploy:claude": "powershell -ExecutionPolicy Bypass -File scripts/deploy.ps1",
+    "deploy:vscode": "powershell -ExecutionPolicy Bypass -File scripts/deploy-vscode.ps1",
     "switch": "powershell -ExecutionPolicy Bypass -File scripts/switch-profile.ps1",
     "switch:deepseek": "npm run switch deepseek",
     "switch:zhipu": "npm run switch zhipu",
-    "switch:agnes": "npm run switch agnes",
     "switch:company": "npm run switch company",
     "backup": "powershell -ExecutionPolicy Bypass -File scripts/backup.ps1",
     "validate": "powershell -ExecutionPolicy Bypass -File scripts/validate.ps1"
@@ -443,7 +420,7 @@ Thumbs.db
 - [x] 基础目录结构设计
 - [x] `settings.json` 核心配置
 - [x] 3+ 核心 Skill (spec, code-review, git-commit)
-- [x] 4+ 配置模板 (DeepSeek, 智谱, Agnes, 公司)
+- [x] 3+ 配置模板 (DeepSeek, 智谱, 公司)
 - [x] 跨平台部署脚本 (Node.js)
 - [x] 模型切换脚本
 - [x] README 文档

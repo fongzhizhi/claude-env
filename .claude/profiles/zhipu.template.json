@@ -19,7 +19,36 @@
   "showTurnDuration": true,
   "spinnerTipsEnabled": false,
   "permissions": {
-    "defaultMode": "acceptEdits"
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Edit",
+      "MultiEdit",
+      "Grep",
+      "Find",
+      "Glob",
+      "LSP",
+      "NotebookEdit",
+      "Task",
+      "TodoWrite",
+      "ExitPlanMode",
+      "mcp__*"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(chmod *)",
+      "Bash(chown *)",
+      "Bash(dd *)",
+      "Bash(mkfs.*)",
+      "Bash(:(){ :|:& };:)",
+      "Edit(**/*.secret.*)",
+      "Write(**/*.secret.*)",
+      "Write(**/.env)",
+      "Write(**/id_rsa*)"
+    ]
   },
   "allowedTools": [
     "Read",

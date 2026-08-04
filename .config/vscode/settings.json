@@ -1,0 +1,15 @@
+{
+  "explorer.confirmDelete": false,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  "terminal.integrated.mouseWheelScrollSensitivity": 3,
+  "terminal.integrated.gpuAcceleration": "off",
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.useTerminal": true,
+  "claudeCode.disableLoginPrompt": true,
+  "claudeCode.initialPermissionMode": "acceptEdits"
+}
