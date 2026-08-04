@@ -1,0 +1,24 @@
+{
+  "name": "claude-env",
+  "version": "1.0.0",
+  "description": "Claude Code 环境即代码 —— 技能、智能体、配置，一键跨设备同步",
+  "scripts": {
+    "deploy": "powershell -ExecutionPolicy Bypass -File scripts/deploy.ps1",
+    "switch": "powershell -ExecutionPolicy Bypass -File scripts/switch-profile.ps1",
+    "switch:deepseek": "npm run switch deepseek",
+    "switch:zhipu": "npm run switch zhipu",
+    "switch:agnes": "npm run switch agnes",
+    "switch:company": "npm run switch company",
+    "backup": "powershell -ExecutionPolicy Bypass -File scripts/backup.ps1",
+    "validate": "powershell -ExecutionPolicy Bypass -File scripts/validate.ps1"
+  },
+  "keywords": [
+    "claude-code",
+    "skills",
+    "ai-agent",
+    "dotfiles",
+    "environment-as-code"
+  ],
+  "author": "",
+  "license": "MIT"
+}

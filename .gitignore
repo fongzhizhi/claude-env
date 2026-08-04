@@ -1,0 +1,21 @@
+# Claude Code 本地配置（包含 API Key，绝不提交！）
+.claude/settings.local.json
+**/.claude/settings.local.json
+*.secret.json
+
+# 环境变量
+.env
+!.env.example
+
+# 备份
+.claude.backup.*
+*.backup.*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE 配置
+.vscode/
+.idea/

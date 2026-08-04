@@ -1,0 +1,25 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.deepseek.com/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "YOUR_DEEPSEEK_API_KEY_HERE",
+    "ANTHROPIC_MODEL": "deepseek-v4-flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-flash",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-flash",
+    "CLAUDE_CODE_EFFORT_LEVEL": "max",
+    "DISABLE_INSTALLATION_CHECKS": "1",
+    "MAX_THINKING_TOKENS": "10000",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50"
+  },
+  "permissions": {
+    "defaultMode": "acceptEdits"
+  },
+  "theme": "dark-ansi",
+  "allowedTools": [
+    "Read",
+    "Write",
+    "Edit",
+    "Bash"
+  ]
+}
