@@ -35,7 +35,10 @@
       "Task",
       "TodoWrite",
       "ExitPlanMode",
-      "mcp__*"
+      "mcp__*",
+      "mcp__cdp__navigate_page",
+      "mcp__cdp__click",
+      "mcp__cdp__screenshot"
     ],
     "deny": [
       "Bash(rm -rf *)",

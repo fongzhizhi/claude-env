@@ -5,7 +5,7 @@
     "ANTHROPIC_AUTH_TOKEN": "YOUR_COMPANY_API_KEY_HERE",
     "ANTHROPIC_MODEL": "deepseek-v4-flash",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.2",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-flash",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
     "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-pro",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
@@ -35,7 +35,10 @@
       "Task",
       "TodoWrite",
       "ExitPlanMode",
-      "mcp__*"
+      "mcp__*",
+      "mcp__cdp__navigate_page",
+      "mcp__cdp__click",
+      "mcp__cdp__screenshot"
     ],
     "deny": [
       "Bash(rm -rf *)",
