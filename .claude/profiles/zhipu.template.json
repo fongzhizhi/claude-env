@@ -1,4 +1,5 @@
 {
+  "model": "glm-4.7-flash",
   "env": {
     "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
     "ANTHROPIC_AUTH_TOKEN": "YOUR_ZHIPU_API_KEY_HERE",
