@@ -2,7 +2,7 @@
   // ============================================
   // 1. 编辑器核心体验
   // ============================================
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "editor.fontFamily": "Consolas, 'Courier New', monospace",
   "editor.lineHeight": 1.6,
   "editor.fontLigatures": true,
@@ -70,7 +70,7 @@
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "git.confirmSync": false,
-  "git.openRepositoryInParentFolders": "always",
+  "git.openRepositoryInParentFolders": "nerver",
   "git.mergeEditor": true,
 
   // ============================================
@@ -78,7 +78,6 @@
   // ============================================
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.mouseWheelScrollSensitivity": 3,
-  "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.rightClickBehavior": "copyPaste",
 
