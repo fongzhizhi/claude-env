@@ -2,7 +2,7 @@
   "env": {
     "ANTHROPIC_BASE_URL": "YOUR_COMPANY_BASE_URL_HERE",
     "ANTHROPIC_AUTH_TOKEN": "YOUR_COMPANY_API_KEY_HERE",
-    "ANTHROPIC_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_MODEL": "deepseek-v4-flash-0731",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.2",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-pro",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash-0731",
