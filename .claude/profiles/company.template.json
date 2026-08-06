@@ -1,13 +1,13 @@
 {
-  "model": "deepseek-v4-flash",
+  "model": "deepseek-v4-flash-0731",
   "env": {
     "ANTHROPIC_BASE_URL": "YOUR_COMPANY_BASE_URL_HERE",
     "ANTHROPIC_AUTH_TOKEN": "YOUR_COMPANY_API_KEY_HERE",
-    "ANTHROPIC_MODEL": "deepseek-v4-flash",
+    "ANTHROPIC_MODEL": "deepseek-v4-flash-0731",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.2",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-flash",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "deepseek-v4-pro",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "deepseek-v4-flash-0731",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash-0731",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "glm-5.2",
     "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "DISABLE_INSTALLATION_CHECKS": "1",
     "MAX_THINKING_TOKENS": "32000",
@@ -35,10 +35,10 @@
       "Task",
       "TodoWrite",
       "ExitPlanMode",
-      "mcp__*",
-      "mcp__cdp__navigate_page",
-      "mcp__cdp__click",
-      "mcp__cdp__screenshot"
+      "WebFetch",
+      "WebSearch",
+      "mcp__cdp",
+      "mcp__claude-vscode"
     ],
     "deny": [
       "Bash(rm -rf *)",
@@ -53,11 +53,5 @@
       "Write(**/.env)",
       "Write(**/id_rsa*)"
     ]
-  },
-  "allowedTools": [
-    "Read",
-    "Write",
-    "Edit",
-    "Bash"
-  ]
+  }
 }

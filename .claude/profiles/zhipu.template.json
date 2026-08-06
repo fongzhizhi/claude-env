@@ -35,10 +35,10 @@
       "Task",
       "TodoWrite",
       "ExitPlanMode",
-      "mcp__*",
-      "mcp__cdp__navigate_page",
-      "mcp__cdp__click",
-      "mcp__cdp__screenshot"
+      "WebFetch",
+      "WebSearch",
+      "mcp__cdp",
+      "mcp__claude-vscode"
     ],
     "deny": [
       "Bash(rm -rf *)",
@@ -53,11 +53,5 @@
       "Write(**/.env)",
       "Write(**/id_rsa*)"
     ]
-  },
-  "allowedTools": [
-    "Read",
-    "Write",
-    "Edit",
-    "Bash"
-  ]
+  }
 }
