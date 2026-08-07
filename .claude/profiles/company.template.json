@@ -26,6 +26,7 @@
       "Read",
       "Write",
       "Edit",
+      "Edit(**/.claude/**)",
       "MultiEdit",
       "Grep",
       "Find",

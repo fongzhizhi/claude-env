@@ -57,11 +57,15 @@
   "workbench.colorTheme": "Default Dark+",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "explorer.copyRelativePathSeparator": "/",
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
   "files.enableTrash": true,
   "files.associations": {
     "*.env.*": "env",
     "*.md": "markdown"
+  },
+  "workbench.editorAssociations": {
+    "*.md": "default"
   },
 
   // ============================================
